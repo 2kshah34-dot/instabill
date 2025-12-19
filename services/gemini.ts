@@ -12,7 +12,7 @@ export const DEFAULT_INVENTORY_LIST: Omit<Product, 'id' | 'quantity'>[] = [
   { name: "Honey & Almonds", price: 10, category: "Personal Care", barcode: "8904035416763" },
   { name: "ZEDEX Dry cough relief", price: 191, category: "Personal care", barcode: "8901148251120" },
   { name: "IODEX body pain expert", price: 42, category: "Personal care", barcode: "89006245" },
-  //{ name: "Balaji wafers", price: 10, category: "snacks", barcode: "8906010501259" }, 
+  { name: "Balaji wafers", price: 10, category: "snacks", barcode: "9798895880494" }, 
    
 ];
 
