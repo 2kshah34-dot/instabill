@@ -1,0 +1,32 @@
+
+{
+  "name": "instabill-india",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://kinjal.github.io/insta-bill",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "@zxing/library": "^0.21.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "lucide-react": "^0.555.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-zxing": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "gh-pages": "^6.3.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

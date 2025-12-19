@@ -1,0 +1,7 @@
+{
+  "name": "InstaBill India",
+  "description": "Scan product barcodes or take photos to instantly generate an itemized bill in Indian Rupees (INR) using Gemini AI.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
