@@ -1,61 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#4f46e5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Intelligent Billing Solution for India">
     <title>InstaBill India</title>
     <link rel="manifest" href="/instabill/assets/manifest-XAiiGjOX.json" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --black: #000000;
+        --deep-brown: #3e2723;
+        --rich-brown: #5d4037;
+        --beige: #d7ccc8;
+        --beige-light: #f5f5dc;
+        --white-granite: #f8f9fa;
+        --granite-border: #e0e0e0;
+      }
+      * {
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+      }
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f3f4f6;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--black);
+        color: var(--beige-light);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
       }
-      .font-mono {
-        font-family: 'JetBrains Mono', monospace;
-      }
-      /* Hide scrollbar for clean UI in lists */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
       .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
       }
+      .app-wrapper {
+        background: radial-gradient(circle at top right, var(--deep-brown), var(--black));
+        min-height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #root {
+        width: 100%;
+        height: 100dvh;
+        max-width: 500px;
+      }
+      .granite-surface {
+        background-color: var(--white-granite);
+        background-image: radial-gradient(#d1d1d1 0.5px, transparent 0.5px);
+        background-size: 4px 4px;
+        color: var(--black);
+      }
+      .glass-surface {
+        background: rgba(62, 39, 35, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(215, 204, 200, 0.15);
+      }
+      .btn-scale:active {
+        transform: scale(0.96);
+      }
+      .rupee-symbol {
+        font-family: sans-serif;
+      }
+      .bg-black { background-color: var(--black); }
+      .bg-brown-deep { background-color: var(--deep-brown); }
+      .bg-brown-rich { background-color: var(--rich-brown); }
+      .bg-beige { background-color: var(--beige); }
+      .bg-beige-light { background-color: var(--beige-light); }
+      .bg-granite { background-color: var(--white-granite); }
+      .text-brown { color: var(--rich-brown); }
+      .text-beige { color: var(--beige); }
+      .text-granite { color: var(--white-granite); }
     </style>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('SW registered'))
-        .catch(err => console.log('SW fail', err));
-    });
-  }
-</script>
-<link rel="stylesheet" href="/index.css">
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-zxing": "https://aistudiocdn.com/react-zxing@^2.1.0",
-    "@zxing/library": "https://aistudiocdn.com/@zxing/library@^0.21.0",
-    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1",
-    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/instabill/assets/index-Do4S1Zud.js"></script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-zxing": "https://aistudiocdn.com/react-zxing@^2.1.0",
+        "@zxing/library": "https://aistudiocdn.com/@zxing/library@^0.21.0",
+        "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1",
+        "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1"
+      }
+    }
+    </script>
+  </head>
   <body>
-    <div id="root"></div>
-</body>
+    <div class="app-wrapper">
+      <div id="root" class="bg-black shadow-2xl overflow-hidden flex flex-col relative"></div>
+    </div>
+  </body>
 </html>
