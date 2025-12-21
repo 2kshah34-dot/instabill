@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#fcfaf2" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="description" content="Intelligent Billing Solution for India">
     <title>InstaBill India</title>
     <link rel="manifest" href="/instabill/assets/manifest-XAiiGjOX.json" />
@@ -14,13 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        --black: #000000;
-        --deep-brown: #3e2723;
-        --rich-brown: #5d4037;
-        --beige: #d7ccc8;
-        --beige-light: #f5f5dc;
-        --white-granite: #f8f9fa;
-        --granite-border: #e0e0e0;
+        --tan-light: #fcfaf2; /* Light Tan/Beige background */
+        --tan-medium: #d4a373; /* Medium Light Brown Tan */
+        --navy-dark: #0f172a; /* Dark Navy Blue */
+        --blue-muted: #334155; /* Muted Deep Blue */
+        --accent-red: #dc2626;
+        --accent-black: #000000;
+        --white: #ffffff;
       }
       * {
         -webkit-tap-highlight-color: transparent;
@@ -28,8 +28,8 @@
       }
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: var(--black);
-        color: var(--beige-light);
+        background-color: var(--tan-light);
+        color: var(--navy-dark);
         margin: 0;
         padding: 0;
         overflow: hidden;
@@ -45,7 +45,7 @@
         -webkit-overflow-scrolling: touch;
       }
       .app-wrapper {
-        background: radial-gradient(circle at top right, var(--deep-brown), var(--black));
+        background-color: var(--tan-light);
         min-height: 100dvh;
         display: flex;
         justify-content: center;
@@ -55,33 +55,44 @@
         width: 100%;
         height: 100dvh;
         max-width: 500px;
+        background-color: var(--tan-light);
+        position: relative;
       }
       .granite-surface {
-        background-color: var(--white-granite);
-        background-image: radial-gradient(#d1d1d1 0.5px, transparent 0.5px);
-        background-size: 4px 4px;
-        color: var(--black);
+        background-color: #ffffff;
+        background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+        background-size: 5px 5px;
+        color: var(--navy-dark);
       }
-      .glass-surface {
-        background: rgba(62, 39, 35, 0.4);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(215, 204, 200, 0.15);
+      /* Universal Button Styling with White Border and Hover Effects */
+      .app-btn {
+        border: 2px solid var(--white) !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       }
-      .btn-scale:active {
-        transform: scale(0.96);
+      .app-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 20px rgba(15, 23, 42, 0.15);
+        filter: brightness(1.1);
+      }
+      .app-btn:active {
+        transform: translateY(0) scale(0.96);
       }
       .rupee-symbol {
         font-family: sans-serif;
       }
-      .bg-black { background-color: var(--black); }
-      .bg-brown-deep { background-color: var(--deep-brown); }
-      .bg-brown-rich { background-color: var(--rich-brown); }
-      .bg-beige { background-color: var(--beige); }
-      .bg-beige-light { background-color: var(--beige-light); }
-      .bg-granite { background-color: var(--white-granite); }
-      .text-brown { color: var(--rich-brown); }
-      .text-beige { color: var(--beige); }
-      .text-granite { color: var(--white-granite); }
+      .bg-navy-dark { background-color: var(--navy-dark); }
+      .bg-blue-muted { background-color: var(--blue-muted); }
+      .bg-tan-medium { background-color: var(--tan-medium); }
+      .text-tan-medium { color: var(--tan-medium); }
+      .text-navy-dark { color: var(--navy-dark); }
+      .border-tan { border-color: #e5e7eb; }
     </style>
     <script type="importmap">
     {
@@ -101,7 +112,7 @@
   </head>
   <body>
     <div class="app-wrapper">
-      <div id="root" class="bg-black shadow-2xl overflow-hidden flex flex-col relative"></div>
+      <div id="root" class="shadow-2xl overflow-hidden flex flex-col relative border-x border-slate-200/50"></div>
     </div>
   </body>
 </html>
