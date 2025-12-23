@@ -9,7 +9,7 @@ import { PaymentModal } from './components/PaymentModal';
 import { AdminDashboard } from './components/AdminDashboard';
 import { AdminLogin } from './components/AdminLogin';
 import { WorkflowGuide } from './components/WorkflowGuide';
-import { identifyProductFromBarcode, identifyProductFromImage, DEFAULT_INVENTORY_LIST } from './services/gemini';
+import { identifyProductFromBarcode, identifyProductFromImage, DEFAULT_INVENTORY_LIST } from './services/data';
 import { AppView, Product, Customer, Transaction, PaymentMethod, StoreProfile } from './types';
 
 export default function App() {
