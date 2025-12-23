@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, ".", "");
 
   return {
-    base: "/insta-bill/", // ✅ MUST match repo name
+    base: "/instabill/", // ✅ MUST match repo name
 
     plugins: [react()],
 
