@@ -1,118 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#fcfaf2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#4f46e5" />
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="description" content="Intelligent Billing Solution for India">
     <title>InstaBill India</title>
-    <link rel="manifest" href="/instabill/assets/manifest-XAiiGjOX.json" />
+    <link rel="manifest" href="/instabill/assets/manifest-CtW70KZw.json" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --tan-light: #fcfaf2; /* Light Tan/Beige background */
-        --tan-medium: #d4a373; /* Medium Light Brown Tan */
-        --navy-dark: #0f172a; /* Dark Navy Blue */
-        --blue-muted: #334155; /* Muted Deep Blue */
-        --accent-red: #dc2626;
-        --accent-black: #000000;
-        --white: #ffffff;
-      }
-      * {
-        -webkit-tap-highlight-color: transparent;
-        box-sizing: border-box;
-      }
       body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: var(--tan-light);
-        color: var(--navy-dark);
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        height: 100%;
-        width: 100%;
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
       }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      /* Hide scrollbar for clean UI in lists */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
       .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
       }
-      .app-wrapper {
-        background-color: var(--tan-light);
-        min-height: 100dvh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      #root {
-        width: 100%;
-        height: 100dvh;
-        max-width: 500px;
-        background-color: var(--tan-light);
-        position: relative;
-      }
-      .granite-surface {
-        background-color: #ffffff;
-        background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
-        background-size: 5px 5px;
-        color: var(--navy-dark);
-      }
-      /* Universal Button Styling with White Border and Hover Effects */
-      .app-btn {
-        border: 2px solid var(--white) !important;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
-      .app-btn:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 12px 20px rgba(15, 23, 42, 0.15);
-        filter: brightness(1.1);
-      }
-      .app-btn:active {
-        transform: translateY(0) scale(0.96);
-      }
-      .rupee-symbol {
-        font-family: sans-serif;
-      }
-      .bg-navy-dark { background-color: var(--navy-dark); }
-      .bg-blue-muted { background-color: var(--blue-muted); }
-      .bg-tan-medium { background-color: var(--tan-medium); }
-      .text-tan-medium { color: var(--tan-medium); }
-      .text-navy-dark { color: var(--navy-dark); }
-      .border-tan { border-color: #e5e7eb; }
     </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react": "https://aistudiocdn.com/react@^19.2.0",
-        "react-zxing": "https://aistudiocdn.com/react-zxing@^2.1.0",
-        "@zxing/library": "https://aistudiocdn.com/@zxing/library@^0.21.0",
-        "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1",
-        "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1"
-      }
-    }
-    </script>
-  </head>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('SW registered'))
+        .catch(err => console.log('SW fail', err));
+    });
+  }
+</script>
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-zxing": "https://aistudiocdn.com/react-zxing@^2.1.0",
+    "@zxing/library": "https://aistudiocdn.com/@zxing/library@^0.21.0",
+    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/instabill/assets/index-BEUk9ucN.js"></script>
+</head>
   <body>
-    <div class="app-wrapper">
-      <div id="root" class="shadow-2xl overflow-hidden flex flex-col relative border-x border-slate-200/50"></div>
-    </div>
-  </body>
+    <div id="root"></div>
+</body>
 </html>
