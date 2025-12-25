@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://2kshah34-dot.github.io/instabill",
+  "homepage": "https://2kshah34-dot.github.io/instabill/index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
